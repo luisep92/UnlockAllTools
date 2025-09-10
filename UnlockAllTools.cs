@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using BepInEx;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
@@ -7,6 +9,12 @@ using UnityEngine.PlayerLoop;
 public sealed class UnlockAllTools : BaseUnityPlugin
 {
     private bool unlocked = false;
+    Configuration config;
+
+    void Awake()
+    {
+        config = Configuration.Read();
+    }
 
     private void Update()
     {
@@ -15,6 +23,7 @@ public sealed class UnlockAllTools : BaseUnityPlugin
 
         if (GameManager._instance.GameState == GlobalEnums.GameState.PLAYING)
         {
+            config = Configuration.Read();
             UnlockTools();
             UnlockCrests();
             unlocked = true;
@@ -27,10 +36,13 @@ public sealed class UnlockAllTools : BaseUnityPlugin
         foreach (var list in lists)
         {
             Logger.LogInfo("Unlocking tools");
-            list.UnlockAll();
-            foreach (var t in list)
+            foreach (var tool in list)
             {
-                Logger.LogInfo(t.name);
+                if (config.toolsToUnlock.Contains(tool.name))
+                {
+                    Logger.LogInfo($"Unlocking {tool.name}");
+                    tool.Unlock();
+                }
             }
         }
     }
@@ -41,10 +53,13 @@ public sealed class UnlockAllTools : BaseUnityPlugin
         foreach (var list in lists)
         {
             Logger.LogInfo("Unlocking crests");
-            list.UnlockAll();
-            foreach (var t in list)
+            foreach (var crest in list)
             {
-                Logger.LogInfo(t.name);
+                if (config.crestsToUnlock.Contains(crest.name))
+                {
+                    Logger.LogInfo($"Unlocking {crest.name}");
+                    crest.Unlock();
+                }
             }
         }
     }
