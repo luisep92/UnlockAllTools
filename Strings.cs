@@ -1,0 +1,81 @@
+internal class Strings
+{
+    public static readonly string toolFile = @"-Unlocking tools
+-Silk Spear
+-Thread Sphere
+-Parry
+-Silk Charge
+-Silk Bomb
+-Silk Boss Needle
+-Straight Pin
+-Tri Pin
+-Sting Shard
+-Tack
+-Harpoon
+-Curve Claws
+-Curve Claws Upgraded
+-Shakra Ring
+-Pimpilo
+-Conch Drill
+-WebShot Forge
+-WebShot Architect
+-WebShot Weaver
+-Screw Attack
+-Cogwork Saw
+-Cogwork Flier
+-Rosary Cannon
+-Lightning Rod
+-Flintstone
+-Silk Snare
+-Flea Brew
+-Lifeblood Syringe
+-Extractor
+-Mosscreep Tool 1
+-Mosscreep Tool 2
+-Lava Charm
+-Bell Bind
+-Poison Pouch
+-Fractured Mask
+-Multibind
+-White Ring
+-Brolly Spike
+-Quickbind
+-Spool Extender
+-Reserve Bind
+-Dazzle Bind
+-Dazzle Bind Upgraded
+-Revenge Crystal
+-Thief Claw
+-Zap Imbuement
+-Quick Sling
+-Maggot Charm
+-Longneedle
+-Wisp Lantern
+-Flea Charm
+-Pinstress Tool
+-Compass
+-Bone Necklace
+-Rosary Magnet
+-Weighted Anklet
+-Barbed Wire
+-Dead Mans Purse
+-Shell Satchel
+-Magnetite Dice
+-Scuttlebrace
+-Wallcling
+-Musician Charm
+-Sprintmaster
+-Thief Charm";
+
+    public static readonly string crestFile = @"-Hunter
+-Hunter_v2
+-Hunter_v3
+-Reaper
+-Wanderer
+-Warrior
+-Witch
+-Toolmaster
+-Spell
+-Cursed
+-Cloakless";
+}
